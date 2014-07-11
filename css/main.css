@@ -22,7 +22,7 @@ body {
 
 /* Titles */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 700;
     color: #333;
 }
@@ -85,8 +85,8 @@ hr {
 
 
 .navbar {
-    text-transform: uppercase;
     margin-bottom: 0px;
+    color:#fff !important;
 }
 
 .navbar-inverse {
@@ -160,7 +160,6 @@ hr {
 
 #footer h4 {
     color: white;
-    text-transform: uppercase;
     padding-bottom: 20px;
 }
 
@@ -184,7 +183,6 @@ hr {
 /* Blog Date*/
 bd {
     font-size: 12px;
-    text-transform: uppercase;
     color: #d2d2d2;
     font-weight: 700;
 }
@@ -192,7 +190,6 @@ bd {
 /* Blog Author*/
 ba {
     font-size: 12px;
-    text-transform: uppercase;
 }
 
 /* Blog Quote */
