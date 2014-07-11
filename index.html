@@ -40,12 +40,12 @@
             <div class='form-row'>
                 <div class='col-xs-12 form-group required'>
                     <label class='control-label'>Username </label>
-                    <input class='form-control' size='4' type='text'  data-bind="jqAuto: { value: UsernameObj, dataValue: UserProfile, source: getUsers, inputProp: 'display_name', labelProp: 'display_name', valueProp: 'display_name', template: 'searchPrediction' }">
+                    <input class='form-control' placeholder="start typing name" size='4' type='text'  data-bind="jqAuto: { value: UsernameObj, dataValue: UserProfile, source: getUsers, inputProp: 'display_name', labelProp: 'display_name', valueProp: 'display_name', template: 'searchPrediction' }">
                 </div>
             </div>
             <div class='form-row'>
                 <div class='col-xs-12 form-group card required'>
-                    <label class='control-label'>Site Name</label>
+                    <label class='control-label'>Site Name (Select appropriate StackExchange Site)</label>
                     <select class='form-control card-number' type='text' data-bind="options: Sites, optionsText: 'api_site_parameter', value: SiteName, optionsValue: 'api_site_parameter' "></select>
 
                 </div>
@@ -70,7 +70,7 @@
 
 
 <!-- +++++ Projects Section +++++ -->
-<div id="ww">
+<div id="ww" data-bind="visible: UserProfile() != ''">
     <div class="container pt">
         <div class="row">
             <div class="col-md-7 col-md-offset-3  alert-success">
@@ -108,7 +108,8 @@
                 <time class="cbp_tmtime" data-bind="text: on_date"><span>4/10/13</span> <span>18:30</span></time>
                 <div  data-bind="attr : { class : reputation_change() >= 0 ? 'cbp_tmicon up fa fa-thumbs-up' : 'cbp_tmicon down fa fa-thumbs-down' }" ></div>
                 <div class="cbp_tmlabel" data-bind="attr : { class : reputation_change() <= -1 ? 'cbp_tmlabel negative-points' : 'cbp_tmlabel positive-points' }">
-                    <p><span data-bind="text: reputation_change() < 0 ? 'Lost' : 'Cha Ching!! Earned'"></span> <span data-bind="text: Math.abs(reputation_change())"></span> Points</p>
+                    <p><span data-bind="text: reputation_change() < 0 ? 'Lost' : 'Cha Ching!! Earned'"></span> <b><span data-bind="text: Math.abs(reputation_change())"></span></b> Points</p>
+
                 </div>
             </li>
 
