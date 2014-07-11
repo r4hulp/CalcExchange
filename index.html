@@ -33,23 +33,23 @@
 </div>
 
 
-<div class="container">
+<div class="container form-container">
     <div class='row'>
         <div class='col-md-4'></div>
         <div class='col-md-4'>
-            <div class='form-row'>
-                <div class='col-xs-12 form-group required'>
-                    <label class='control-label'>Username </label>
-                    <input class='form-control' placeholder="start typing name" size='4' type='text'  data-bind="jqAuto: { value: UsernameObj, dataValue: UserProfile, source: getUsers, inputProp: 'display_name', labelProp: 'display_name', valueProp: 'display_name', template: 'searchPrediction' }">
-                </div>
-            </div>
             <div class='form-row'>
                 <div class='col-xs-12 form-group card required'>
                     <label class='control-label'>Site Name (Select appropriate StackExchange Site)</label>
                     <select class='form-control card-number' type='text' data-bind="options: Sites, optionsText: 'api_site_parameter', value: SiteName, optionsValue: 'api_site_parameter' "></select>
 
                 </div>
+            </div>            <div class='form-row'>
+                <div class='col-xs-12 form-group required'>
+                    <label class='control-label'>Username </label>
+                    <input class='form-control' placeholder="start typing name" size='4' type='text'  data-bind="jqAuto: { value: UsernameObj, dataValue: UserProfile, source: getUsers, inputProp: 'display_name', labelProp: 'display_name', valueProp: 'display_name', template: 'searchPrediction' }">
+                </div>
             </div>
+
             <div class='form-row'>
                 <div class='col-xs-6 form-group cvc required'>
                     <label class='control-label'>From</label>
@@ -57,7 +57,7 @@
                 </div>
                 <div class='col-xs-6 form-group expiration required'>
                     <label class='control-label'>To</label>
-                    <input class='form-control card-expiry-month' placeholder='MM' size='2' type='text' data-bind="datepicker: ToDate, datepickerOptions: { minDate: new Date() }">
+                    <input class='form-control card-expiry-month' placeholder='MM' size='2' type='text' data-bind="datepicker: ToDate, datepickerOptions: { defaultDate: new Date() }">
                 </div>
 
             </div>
@@ -149,6 +149,7 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
 <script src="//cdnjs.cloudflare.com/ajax/libs/sugar/1.4.1/sugar.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.1.0/knockout-min.js"></script>
 <script src="js/ko.jqauto.js"></script>
