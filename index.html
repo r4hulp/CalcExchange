@@ -108,7 +108,8 @@
                 <time class="cbp_tmtime" data-bind="text: on_date"><span>4/10/13</span> <span>18:30</span></time>
                 <div  data-bind="attr : { class : reputation_change() >= 0 ? 'cbp_tmicon up fa fa-thumbs-up' : 'cbp_tmicon down fa fa-thumbs-down' }" ></div>
                 <div class="cbp_tmlabel" data-bind="attr : { class : reputation_change() <= -1 ? 'cbp_tmlabel negative-points' : 'cbp_tmlabel positive-points' }">
-                    <p><span data-bind="text: reputation_change() < 0 ? 'Lost' : 'Cha Ching!! Earned'"></span> <span data-bind="text: Math.abs(reputation_change())"></span> Points</p>
+                    <p><span data-bind="text: reputation_change() < 0 ? 'Lost' : 'Cha Ching!! Earned'"></span> <b><span data-bind="text: Math.abs(reputation_change())"></span></b> Points</p>
+
                 </div>
             </li>
 
