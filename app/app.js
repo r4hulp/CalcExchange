@@ -34,7 +34,7 @@ CalcExchange.App = function(){
     //Private
     var self = this;
 
-    self.UserProfile = ko.observable();
+    self.UserProfile = ko.observable("");
     self.apiUrl = "http://api.stackexchange.com/2.2/"; //API 2.2 url;
     self.SiteName = ko.observable("stackoverflow");
     self.FromDate = ko.observable(new Date());
@@ -56,6 +56,11 @@ CalcExchange.App = function(){
         self.Uri(self.GenerateUri());
     });
 
+
+    self.SiteName.subscribe(function(){
+        console.log("Sites");
+       self.UsernameObj("");
+    });
     self.GenerateUri = function(){
         uri = "http://api.stackexchange.com/2.2/users/"+self.Username()+"/reputation?pagesize=100&fromdate="+Math.floor(new Date(self.FromDate()).getTime() / 1000)+"&todate="+Math.floor(new Date(self.ToDate()).getTime() / 1000)+"&site=" + self.SiteName();
         return uri;
