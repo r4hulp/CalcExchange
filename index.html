@@ -38,18 +38,18 @@
         <div class='col-md-4'></div>
         <div class='col-md-4'>
             <div class='form-row'>
-                <div class='col-xs-12 form-group required'>
-                    <label class='control-label'>Username </label>
-                    <input class='form-control' placeholder="start typing name" size='4' type='text'  data-bind="jqAuto: { value: UsernameObj, dataValue: UserProfile, source: getUsers, inputProp: 'display_name', labelProp: 'display_name', valueProp: 'display_name', template: 'searchPrediction' }">
-                </div>
-            </div>
-            <div class='form-row'>
                 <div class='col-xs-12 form-group card required'>
                     <label class='control-label'>Site Name (Select appropriate StackExchange Site)</label>
                     <select class='form-control card-number' type='text' data-bind="options: Sites, optionsText: 'api_site_parameter', value: SiteName, optionsValue: 'api_site_parameter' "></select>
 
                 </div>
+            </div>            <div class='form-row'>
+                <div class='col-xs-12 form-group required'>
+                    <label class='control-label'>Username </label>
+                    <input class='form-control' placeholder="start typing name" size='4' type='text'  data-bind="jqAuto: { value: UsernameObj, dataValue: UserProfile, source: getUsers, inputProp: 'display_name', labelProp: 'display_name', valueProp: 'display_name', template: 'searchPrediction' }">
+                </div>
             </div>
+
             <div class='form-row'>
                 <div class='col-xs-6 form-group cvc required'>
                     <label class='control-label'>From</label>
