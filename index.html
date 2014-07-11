@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>CalcExchange</title>
+    <!-- Latest compiled and minified CSS -->
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+</head>
+<body>
+
+
+
+<!-- Static navbar -->
+<div class="navbar navbar-inverse navbar-static-top">
+    <!-- +++++ Welcome Section +++++ -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 centered">
+                    <i class="fa fa-stack-exchange fa-5x"></i>
+                    <h1>The ultimate StackExchange Point Calculater!</h1>
+                    <p>by Rahul Patil</p>
+
+                </div><!-- /col-lg-8 -->
+            </div><!-- /row -->
+        </div> <!-- /container -->
+</div>
+
+
+<div class="container">
+    <div class='row'>
+        <div class='col-md-4'></div>
+        <div class='col-md-4'>
+            <div class='form-row'>
+                <div class='col-xs-12 form-group required'>
+                    <label class='control-label'>Username </label>
+                    <input class='form-control' size='4' type='text'  data-bind="jqAuto: { value: UsernameObj, dataValue: UserProfile, source: getUsers, inputProp: 'display_name', labelProp: 'display_name', valueProp: 'display_name', template: 'searchPrediction' }">
+                </div>
+            </div>
+            <div class='form-row'>
+                <div class='col-xs-12 form-group card required'>
+                    <label class='control-label'>Site Name</label>
+                    <select class='form-control card-number' type='text' data-bind="options: Sites, optionsText: 'api_site_parameter', value: SiteName, optionsValue: 'api_site_parameter' "></select>
+
+                </div>
+            </div>
+            <div class='form-row'>
+                <div class='col-xs-6 form-group cvc required'>
+                    <label class='control-label'>From</label>
+                    <input autocomplete='off' class='form-control card-cvc' placeholder='ex. 311' size='4' type='text'  data-bind="datepicker: FromDate, datepickerOptions: { defaultDate: new Date() }">
+                </div>
+                <div class='col-xs-6 form-group expiration required'>
+                    <label class='control-label'>To</label>
+                    <input class='form-control card-expiry-month' placeholder='MM' size='2' type='text' data-bind="datepicker: ToDate, datepickerOptions: { minDate: new Date() }">
+                </div>
+
+            </div>
+
+        </div>
+        <div class='col-md-4'></div>
+    </div>
+</div>
+
+
+
+<!-- +++++ Projects Section +++++ -->
+<div id="ww">
+    <div class="container pt">
+        <div class="row">
+            <div class="col-md-7 col-md-offset-3  alert-success">
+                <div class="col-md-12 row" data-bind="with : UserProfile" class="profile">
+                    <!--Image-->
+                    <div class="col-md-12 profile-container">
+                        <div class="col-md-4">
+                            <img class="img-circle" data-bind="attr : {src : profile_image }" />
+                        </div>
+                        <div class="col-md-8">
+                            <h3>Name : <span data-bind="text: display_name"></span></h3>
+                            <h5>Total Points in given period : <span data-bind="text:$root.TotalPoints"></span></h5>
+                            <h5>Total Reputations : <span data-bind="text: reputation"></span></h5>
+
+                            <div class="col-md-12" data-bind="with: badge_counts">
+                                <div class="col-md-4 centered"><span class="fa fa-trophy fa-4x gold-icon"></span><div class="centered"><span data-bind="text: gold"></span></div></div>
+                                <div class="col-md-4 centered"><span class="fa fa-trophy fa-4x silver-icon"></span><div class="centered"><span data-bind="text: silver"></span></div></div>
+                                <div class="col-md-4 centered"><span class="fa fa-trophy fa-4x bronze-icon"></span><div class="centered"><span data-bind="text: bronze"></span></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div><!-- /container -->
+</div>
+
+<!--++++ TIMELINE ++++++-->
+
+<div class="container">
+    <div class="col-md-8 col-md-offset-3">
+        <ul class="cbp_tmtimeline" data-bind="foreach: ReputationTimeline">
+            <li>
+                <time class="cbp_tmtime" data-bind="text: on_date"><span>4/10/13</span> <span>18:30</span></time>
+                <div  data-bind="attr : { class : reputation_change() >= 0 ? 'cbp_tmicon up fa fa-thumbs-up' : 'cbp_tmicon down fa fa-thumbs-down' }" ></div>
+                <div class="cbp_tmlabel" data-bind="attr : { class : reputation_change() <= -1 ? 'cbp_tmlabel negative-points' : 'cbp_tmlabel positive-points' }">
+                    <p><span data-bind="text: reputation_change() < 0 ? 'Lost' : 'Cha Ching!! Earned'"></span> <span data-bind="text: Math.abs(reputation_change())"></span> Points</p>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+
+
+<!-- +++++ Footer Section +++++ -->
+
+<div id="footer">
+    <div class="container">
+        <div class="row pull-right">
+                <h4>CalcExchange</h4>
+                <p>
+                    Made with love at Zevenseas<br/>
+                </p>
+
+
+        </div>
+
+    </div>
+</div>
+
+
+<script id="searchPrediction" type="text/html">
+    <a>
+        <img title="profile_image" width="30" height="30" data-bind="attr : { src : profile_image}">
+        <span data-bind="text: display_name"></span>
+        ( <span data-bind="text: reputation"></span> )
+    </a>
+</script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/sugar/1.4.1/sugar.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.1.0/knockout-min.js"></script>
+<script src="js/ko.jqauto.js"></script>
+<script src="app/service.js"></script>
+<script src="app/app.js"></script>
+
+</body>
+</html>

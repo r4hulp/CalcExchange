@@ -1,0 +1,464 @@
+/*
+ * Author: Carlos Alvarez
+ * URL: http://alvarez.is
+ *
+ * Project Name: STANLEY - Free Bootstrap 3 Theme
+ * Version: 1.0
+ * URL: http://blacktie.co
+ */
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,900);
+
+body {
+    background-color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: #555;
+
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Titles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #333;
+}
+
+h1 {
+    font-size: 35px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+
+/* Paragraph & Typographic */
+/*p {*/
+    /*line-height: 28px;*/
+    /*margin-bottom: 25px;*/
+    /*font-size: 16px;*/
+/*}*/
+
+.centered {
+    text-align: center;
+}
+
+/* Links */
+a {
+    color: #1abc9c;
+    word-wrap: break-word;
+
+    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+    transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+a:hover,
+a:focus {
+    color: #7b7b7b;
+    text-decoration: none;
+    outline: 0;
+}
+
+a:before,
+a:after {
+    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+    transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+
+.navbar {
+    text-transform: uppercase;
+    margin-bottom: 0px;
+}
+
+.navbar-inverse {
+    padding-bottom: 70px;
+    padding-top: 70px;
+}
+
+.navbar-inverse {
+    background-color: #1abc9c;
+    border-color: #16a085;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: #222222;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: transparent;
+}
+
+.progress-bar-theme {
+    background-color: #1abc9c;
+}
+
+
+/* Helpers */
+
+.mt {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.pt {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+/* +++++ WRAP SECTIONS +++++ */
+
+#ww {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    background-color: #f2f2f2;
+}
+
+
+#footer {
+    background-color: #2f2f2f;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#footer p {
+    color: white;
+}
+
+#footer h4 {
+    color: white;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+}
+
+
+/* +++++ Color Wraps / Blog Page +++++ */
+
+#grey {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #f2f2f2;
+}
+
+#white {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #ffffff;
+}
+
+
+
+/* Blog Date*/
+bd {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #d2d2d2;
+    font-weight: 700;
+}
+
+/* Blog Author*/
+ba {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+/* Blog Quote */
+.bq {
+    font-size: 22px;
+    padding-top: 30px;
+}
+
+/* Blog Tags */
+bt {
+    font-size: 12px;
+}
+
+/* ================== PORTFOLIO IMAGES HOVER EFFECT ================== */
+/* Effects also are controled by hover.zoom.js */
+.zoom {
+    display:block;
+    position:relative;
+    overflow:hidden;
+    background:transparent url(../img/loader.gif) no-repeat center;
+}
+
+
+.zoomOverlay {
+    position:absolute;
+    top:0; left:0;
+    bottom:0; right:0;
+    display:none;
+    background-image:url(../img/zoom.png);
+    background-repeat:no-repeat;
+    background-position:center;
+}
+
+.zoom2 {
+    opacity: 1;
+}
+
+.zoom2:hover {
+    opacity: 0.5;
+}
+
+/* glyphicon Configuration */
+
+.glyphicon {
+    font-size: 40px;
+    color: #1abc9c;
+}
+
+.profile-container{
+
+    padding:10px;
+}
+
+/*Timeline*/
+
+@font-face {
+    font-family: 'ecoico';
+    src:url('../fonts/timelineicons/ecoico.eot');
+    src:url('../fonts/timelineicons/ecoico.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/timelineicons/ecoico.woff') format('woff'),
+    url('../fonts/timelineicons/ecoico.ttf') format('truetype'),
+    url('../fonts/timelineicons/ecoico.svg#ecoico') format('svg');
+    font-weight: normal;
+    font-style: normal;
+} /* Made with http://icomoon.io/ */
+
+.cbp_tmtimeline {
+    margin: 30px 0 0 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+}
+
+/* The line */
+.cbp_tmtimeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 10px;
+    background: #afdcf8;
+    left: 20%;
+    margin-left: -10px;
+}
+
+.cbp_tmtimeline > li {
+    position: relative;
+}
+
+/* The date/time */
+.cbp_tmtimeline > li .cbp_tmtime {
+    display: block;
+    width: 25%;
+    padding-right: 100px;
+    position: absolute;
+}
+
+.cbp_tmtimeline > li .cbp_tmtime span {
+    display: block;
+    text-align: right;
+}
+
+.cbp_tmtimeline > li .cbp_tmtime span:first-child {
+    font-size: 0.9em;
+    color: #bdd0db;
+}
+
+.cbp_tmtimeline > li .cbp_tmtime span:last-child {
+    font-size: 2.9em;
+    color: #3594cb;
+}
+
+.cbp_tmtimeline > li:nth-child(odd) .cbp_tmtime span:last-child {
+    color: #6cbfee;
+}
+
+/* Right content */
+.cbp_tmtimeline > li .cbp_tmlabel {
+    margin: 0 0 15px 25%;
+    color: #fff;
+    padding: 1em;
+    font-size: 1.2em;
+    font-weight: 300;
+    line-height: 1.4;
+    position: relative;
+    border-radius: 5px;
+}
+
+
+.cbp_tmtimeline > li .cbp_tmlabel h2 {
+    margin-top: 0px;
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+
+/* The triangle */
+.cbp_tmtimeline > li .cbp_tmlabel:after {
+    right: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-width: 10px;
+    top: 35%;
+}
+
+
+
+/* The icons */
+.cbp_tmtimeline > li .cbp_tmicon {
+    width: 40px;
+    height: 40px;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    font-size: 1.4em;
+    line-height: 40px;
+    -webkit-font-smoothing: antialiased;
+    position: absolute;
+    color: #fff;
+
+    border-radius: 50%;
+    text-align: center;
+    left: 20%;
+    top: 25%;
+    margin: 0 0 0 -25px;
+}
+
+
+.cbp_tmtimeline > li .cbp_tmicon.up {
+    background: #1abc9c;
+}
+.cbp_tmtimeline > li .cbp_tmicon.down {
+    background:red !important
+}
+.cbp_tmicon-phone:before {
+    content: "\e000";
+}
+
+.cbp_tmicon-screen:before {
+    content: "\e001";
+}
+
+.cbp_tmicon-mail:before {
+    content: "\e002";
+}
+
+.cbp_tmicon-earth:before {
+    content: "\e003";
+}
+
+/* Example Media Queries */
+@media screen and (max-width: 65.375em) {
+
+    .cbp_tmtimeline > li .cbp_tmtime span:last-child {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 47.2em) {
+    .cbp_tmtimeline:before {
+        display: none;
+    }
+
+    .cbp_tmtimeline > li .cbp_tmtime {
+        width: 100%;
+        position: relative;
+        padding: 0 0 20px 0;
+    }
+
+    .cbp_tmtimeline > li .cbp_tmtime span {
+        text-align: left;
+    }
+
+    .cbp_tmtimeline > li .cbp_tmlabel {
+        margin: 0 0 30px 0;
+        padding: 1em;
+        font-weight: 400;
+        font-size: 95%;
+    }
+
+    .cbp_tmtimeline > li .cbp_tmlabel:after {
+        right: auto;
+        left: 20px;
+        border-right-color: transparent;
+        border-bottom-color: #3594cb;
+        top: -20px;
+    }
+
+
+    .cbp_tmtimeline > li .cbp_tmicon {
+        position: relative;
+        float: right;
+        left: auto;
+        margin: -55px 5px 0 0px;
+    }
+}
+
+.negative-points {
+    background:red !important;
+}
+
+.positive-points{
+    background: #1abc9c !important;
+}
+
+.cbp_tmtimeline > li .cbp_tmlabel.positive-points:after{
+    border-right-color: #1abc9c !important;
+}
+
+.cbp_tmtimeline > li .cbp_tmlabel.negative-points:after{
+    border-right-color:red !important;
+}
+
+.gold-icon{
+    color:#FFD700;
+}
+
+.silver-icon{
+    color:#C0C0C0;
+}
+
+.bronze-icon{
+    color:#8c7853;
+}
