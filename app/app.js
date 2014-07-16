@@ -73,7 +73,7 @@ CalcExchange.App = function(){
 
     self.SitesCompute = ko.computed(function(){
         var siteCollection;
-        var sites = $.get("http://api.stackexchange.com/2.2/sites?filter=!*L6TgyCNXHmkzktK&key="+self.ApiKey()+"&pagesize=600", function(result){
+        var sites = $.get("http://api.stackexchange.com/2.2/sites?filter=!*L6TgyCNXHmkzktK&key="+self.ApiKey+"&pagesize=600", function(result){
             var siteArray = _.sortBy(result.items, "api_site_parameter");
             self.Sites(siteArray);
         });
