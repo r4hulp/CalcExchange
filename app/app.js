@@ -102,6 +102,10 @@ CalcExchange.App = function () {
         var toDate = self.ToDate();
         self.AnswerUri = self.AnswerHistoryUri();
         self.QuestionsUri = self.QuestionsHistoryUri();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7447b393534b503d2ea9ec8a81e8330cfff174d5
         self.Uri(self.GenerateUri());
     });
 
