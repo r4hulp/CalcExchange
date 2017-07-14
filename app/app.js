@@ -54,7 +54,10 @@ CalcExchange.App = function () {
 
     self.Uri = ko.observable();
     self.AnswerUri = "";
+<<<<<<< HEAD
     self.QuestionsUri = "";
+=======
+>>>>>>> 8f3640b666c71283235c08ac5f97bee1c60a02bd
 
     self.UserProfile.subscribe(function (user) {
         console.log(user);
@@ -78,12 +81,15 @@ CalcExchange.App = function () {
         return answerUrl;
     }
 
+<<<<<<< HEAD
     self.QuestionsHistoryUri = function () {
         //2.2/users/sdfsdf/questions?fromdate=1499817600&todate=1501113600&order=desc&sort=activity&site=stackoverflow
         var questionsuri = "http://api.stackexchange.com/2.2/users/" + self.Username() + "/questions?pagesize=100&fromdate=" + Math.floor(new Date(self.FromDate()).getTime() / 1000) + "&todate=" + Math.floor(new Date(self.ToDate()).getTime() / 1000) + "&site=" + self.SiteName();
         return questionsuri;
     }
 
+=======
+>>>>>>> 8f3640b666c71283235c08ac5f97bee1c60a02bd
     self.FromDate.subscribe(function (item) {
         console.log(item);
     });
@@ -101,7 +107,10 @@ CalcExchange.App = function () {
         var newDate = self.FromDate();
         var toDate = self.ToDate();
         self.AnswerUri = self.AnswerHistoryUri();
+<<<<<<< HEAD
         self.QuestionsUri = self.QuestionsHistoryUri();
+=======
+>>>>>>> 8f3640b666c71283235c08ac5f97bee1c60a02bd
         self.Uri(self.GenerateUri());
     });
 
@@ -112,6 +121,7 @@ CalcExchange.App = function () {
         console.log("Uri Subscription");
         if (self.Username() != null && self.Username() != "") {
             var totalPoints = 0;
+
             var questionsPromise = CalcExchange.Service.getUserReputation(self.QuestionsUri);
             questionsPromise.success(function (qData) {
                 self.AnswersWithinTime.removeAll();
