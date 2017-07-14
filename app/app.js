@@ -40,7 +40,7 @@ CalcExchange.App = function () {
     self.apiUrl = "http://api.stackexchange.com/2.2/"; //API 2.2 url;
     self.SiteName = ko.observable("stackoverflow");
 
-    self.ApiKey = "8wI4srHLoOc4S5ypRJgDPA((";
+    self.ApiKey = "NUXQnF5rJxrtiJ5ZJQTVIg((";
     self.FromDate = ko.observable(new Date());
     self.ToDate = ko.observable(new Date());
     self.Username = ko.observable("");
@@ -112,7 +112,6 @@ CalcExchange.App = function () {
         console.log("Uri Subscription");
         if (self.Username() != null && self.Username() != "") {
             var totalPoints = 0;
-
             var questionsPromise = CalcExchange.Service.getUserReputation(self.QuestionsUri);
             questionsPromise.success(function (qData) {
                 self.AnswersWithinTime.removeAll();
@@ -129,6 +128,12 @@ CalcExchange.App = function () {
                         ko.utils.arrayForEach(aData.items, function (item) {
                             self.AnswersWithinTime.push(item.answer_id);
                         });
+                        if (self.AnswersWithinTime().indexOf(item.answer_id) != -1) {
+                            var number = item.reputation_change === undefined ? 0 : item.reputation_change;
+                            // self.ReputationTimeline.push(new CalcExchange.Models.ReputationItem(item))
+                            totalPoints += number;
+                        }
+
 
                         var promise = CalcExchange.Service.getUserReputation(self.Uri());
                         promise.success(function (data) {
