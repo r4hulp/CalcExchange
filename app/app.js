@@ -128,24 +128,29 @@ CalcExchange.App = function () {
                         ko.utils.arrayForEach(aData.items, function (item) {
                             self.AnswersWithinTime.push(item.answer_id);
                         });
+                        if (self.AnswersWithinTime().indexOf(item.answer_id) != -1) {
+                            var number = item.reputation_change === undefined ? 0 : item.reputation_change;
+                            self.ReputationTimeline.push(new CalcExchange.Models.ReputationItem(item))
+                            totalPoints += number;
 
-                        var promise = CalcExchange.Service.getUserReputation(self.Uri());
-                        promise.success(function (data) {
-                            //                self.ReputationTimeline(data.items);
-                            self.ReputationTimeline.removeAll();
-                            ko.utils.arrayForEach(data.items, function (item) {
 
-                                if (self.AnswersWithinTime().indexOf(item.post_id) != -1) {
-                                    var number = item.reputation_change === undefined ? 0 : item.reputation_change;
-                                    self.ReputationTimeline.push(new CalcExchange.Models.ReputationItem(item))
-                                    totalPoints += number;
-                                }
+                            var promise = CalcExchange.Service.getUserReputation(self.Uri());
+                            promise.success(function (data) {
+                                //                self.ReputationTimeline(data.items);
+                                self.ReputationTimeline.removeAll();
+                                ko.utils.arrayForEach(data.items, function (item) {
+
+                                    if (self.AnswersWithinTime().indexOf(item.post_id) != -1) {
+                                        var number = item.reputation_change === undefined ? 0 : item.reputation_change;
+                                        self.ReputationTimeline.push(new CalcExchange.Models.ReputationItem(item))
+                                        totalPoints += number;
+                                    }
+                                });
+                                console.log(self.ReputationTimeline());
+                                self.TotalPoints(totalPoints);
                             });
-                            console.log(self.ReputationTimeline());
-                            self.TotalPoints(totalPoints);
-                        });
-                    }
-                });
+                        }
+                    });
             });
 
 
