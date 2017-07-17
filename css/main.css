@@ -97,6 +97,7 @@ hr {
 .navbar-inverse {
     background-color: #1abc9c;
     border-color: #16a085;
+    z-index: 1;
 }
 
 .navbar-inverse .navbar-nav > li > a {
